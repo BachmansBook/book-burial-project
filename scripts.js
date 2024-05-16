@@ -1,71 +1,58 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize interactive elements
-    const interactiveTimeline = document.querySelector('#timeline');
-    const faqAccordion = document.querySelectorAll('.faq-item');
-    const map = L.map('map').setView([40.7829, -73.9654], 13); // Location of Central Park
+// scripts.js
 
-    // Load and display interactive timeline
-    fetch('timeline.json')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(item => {
-                const node = document.createElement('div');
-                node.className = 'timeline-event';
-                node.textContent = `${item.date}: ${item.event}`;
-                interactiveTimeline.appendChild(node);
-            });
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    // Example of interactive element functionality
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    // FAQ accordion functionality
-    faqAccordion.forEach(item => {
-        item.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + 'px';
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Simple form validation
+        if (name === "" || email === "" || message === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Example of form submission (AJAX request)
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", form.action, true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                alert("Your message has been sent successfully!");
+                form.reset();
+            } else if (xhr.readyState === XMLHttpRequest.DONE) {
+                alert("There was an error sending your message. Please try again.");
             }
-        });
+        };
+
+        xhr.send(`name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`);
     });
 
-    // Map setup with Leaflet.js
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    // Example of dynamic content loading
+    const projectsSection = document.getElementById("projects");
+    const projectsData = [
+        { title: "Project 1", description: "Description for Project 1" },
+        { title: "Project 2", description: "Description for Project 2" },
+        { title: "Project 3", description: "Description for Project 3" }
+    ];
 
-    // Add a marker for the book burial location
-    const marker = L.marker([40.7829, -73.9654]).addTo(map);
-    marker.bindPopup('Book Burial Site').openPopup();
-
-    // Setup event handlers for live updates and media
-    document.querySelector('#live-updates-button').addEventListener('click', function() {
-        fetch('live-updates.json')
-            .then(response => response.json())
-            .then(updates => {
-                updates.forEach(update => {
-                    const updateNode = document.createElement('p');
-                    updateNode.textContent = update.message;
-                    document.querySelector('#live-updates').appendChild(updateNode);
-                });
-            });
+    projectsData.forEach(project => {
+        const projectDiv = document.createElement("div");
+        projectDiv.className = "project";
+        projectDiv.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
+        projectsSection.appendChild(projectDiv);
     });
 
-    // Accessibility features
-    document.querySelector('#accessibility-toggle').addEventListener('click', function() {
-        document.body.classList.toggle('high-contrast');
+    // Example of a simple animation
+    const homeSection = document.querySelector(".home");
+    homeSection.style.opacity = 0;
+    window.addEventListener("load", function() {
+        homeSection.style.transition = "opacity 1s";
+        homeSection.style.opacity = 1;
     });
-
-    // Sponsor logos display
-    const sponsorsDiv = document.querySelector('#sponsors');
-    fetch('sponsors.json')
-        .then(response => response.json())
-        .then(sponsors => {
-            sponsors.forEach(sponsor => {
-                const img = document.createElement('img');
-                img.src = sponsor.logo;
-                img.alt = sponsor.name + ' logo';
-                sponsorsDiv.appendChild(img);
-            });
-        });
 });
