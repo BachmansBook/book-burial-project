@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript is working!');
-  
+
     // Timeline functionality
     const timelineData = [
         { year: 2024, event: 'Project Start' },
@@ -16,40 +16,53 @@ document.addEventListener('DOMContentLoaded', function() {
         timelineContainer.appendChild(timelineItem);
     });
 
+    // FAQ functionality
+    const faqData = [
+        { question: 'What is the CI Book Project?', answer: 'It is a project dedicated to the Central Park Book Burial.' },
+        { question: 'When will the book be revealed?', answer: 'The book will be revealed in 2125.' }
+    ];
+
+    const faqContainer = document.getElementById('faq-container');
+    faqData.forEach(item => {
+        const faqItem = document.createElement('div');
+        faqItem.className = 'faq-item';
+        faqItem.innerHTML = `<strong>${item.question}</strong><p>${item.answer}</p>`;
+        faqContainer.appendChild(faqItem);
+    });
+
+    // Live updates functionality
+    const updatesData = [
+        { date: '2024-01-01', update: 'Project officially started.' },
+        { date: '2025-09-18', update: 'Book Burial Ceremony held.' }
+    ];
+
+    const updatesContainer = document.getElementById('updates-container');
+    updatesData.forEach(item => {
+        const updateItem = document.createElement('div');
+        updateItem.className = 'update-item';
+        updateItem.innerHTML = `<strong>${item.date}</strong>: ${item.update}`;
+        updatesContainer.appendChild(updateItem);
+    });
+
+    // Countdown functionality
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date('2025-09-18T00:00:00');
+    const updateCountdown = () => {
+        const now = new Date();
+        const diff = targetDate - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+    setInterval(updateCountdown, 1000);
+
     // Form submission functionality
     const contactForm = document.querySelector('form');
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         alert('Thank you for your message. We will get back to you soon!');
         contactForm.reset();
-    });
-
-    // Countdown functionality
-    const countdown = document.getElementById('countdown');
-    const countdownDate = new Date('September 18, 2025 00:00:00').getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = countdownDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-        if (distance < 0) {
-            clearInterval(countdownInterval);
-            countdown.innerHTML = 'The event has started!';
-        }
-    }
-
-    const countdownInterval = setInterval(updateCountdown, 1000);
-
-    // Language switcher functionality
-    const languageSwitcher = document.getElementById('language-switcher');
-    languageSwitcher.addEventListener('change', function(event) {
-        alert('Language changed to ' + event.target.value);
     });
 });
