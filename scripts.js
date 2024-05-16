@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript is working!');
-
+  
     // Timeline functionality
     const timelineData = [
         { year: 2024, event: 'Project Start' },
@@ -25,25 +25,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Countdown functionality
-    const countdownTimer = document.getElementById('countdown-timer');
-    const revealDate = new Date('2125-01-01T00:00:00Z').getTime();
+    const countdown = document.getElementById('countdown');
+    const countdownDate = new Date('September 18, 2025 00:00:00').getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
-        const distance = revealDate - now;
+        const distance = countdownDate - now;
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        countdownTimer.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
         if (distance < 0) {
             clearInterval(countdownInterval);
-            countdownTimer.innerHTML = 'The book has been revealed!';
+            countdown.innerHTML = 'The event has started!';
         }
     }
 
     const countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Language switcher functionality
+    const languageSwitcher = document.getElementById('language-switcher');
+    languageSwitcher.addEventListener('change', function(event) {
+        alert('Language changed to ' + event.target.value);
+    });
 });
