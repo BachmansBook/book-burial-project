@@ -1,10 +1,7 @@
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  background-color: #000; /* Dark Black */
+  color: #fff; /* White text for contrast */
+  font-family: 'Arial', sans-serif; /* Example font family */
 }
 
 header {
