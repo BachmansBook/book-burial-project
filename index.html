@@ -3,62 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Burial Project</title>
+    <meta name="description" content="Comprehensive Book Project - A thorough and enhanced version of the original cibook.org website.">
+    <meta name="keywords" content="book, project, comprehensive, enhanced, cibook">
+    <meta name="author" content="Your Name">
+    <title>Comprehensive Book Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Book Burial Project</h1>
+        <div class="container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#faq">FAQ</a>
-        <a href="#map">Map</a>
-        <a href="#live-updates">Live Updates</a>
-        <a href="#sponsors">Sponsors</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <section id="about">
-            <h2>About the Project</h2>
-            <p>This project involves burying a book in Central Park, New York City, to be revealed in 100 years. Our goal is to create a lasting legacy and connect with future generations.</p>
-        </section>
-        <section id="timeline">
-            <h2>Project Timeline</h2>
-            <div class="timeline-events">
-                <!-- Timeline events will be dynamically loaded here -->
+    <main>
+        <section id="home" class="home">
+            <div class="container">
+                <h1>Welcome to the Comprehensive Book Project</h1>
+                <p>Your source for the most thorough and enhanced book project experience.</p>
             </div>
         </section>
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">What is the purpose of this project?</div>
-            <div class="faq-content"><p>The purpose is to create a time capsule that connects current and future generations through the preservation of a book.</p></div>
-            <div class="faq-item">Where is the book buried?</div>
-            <div class="faq-content"><p>The book is buried in a secure location in Central Park, New York City.</p></div>
-            <div class="faq-item">When will the book be revealed?</div>
-            <div class="faq-content"><p>The book will be revealed 100 years from the date of burial.</p></div>
-        </section>
-        <section id="map">
-            <h2>Map</h2>
-            <div id="map"></div>
-        </section>
-        <section id="live-updates">
-            <h2>Live Updates</h2>
-            <button id="live-updates-button">Load Live Updates</button>
-            <div class="updates">
-                <!-- Live updates will be dynamically loaded here -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Learn more about our mission, vision, and the team behind the project.</p>
             </div>
         </section>
-        <section id="sponsors">
-            <h2>Our Sponsors</h2>
-            <!-- Sponsor logos will be dynamically loaded here -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Our Projects</h2>
+                <p>Explore the various projects we have undertaken and their impact.</p>
+            </div>
         </section>
-        <footer>
-            <p>&copy; 2024 Book Burial Project. All rights reserved.</p>
-        </footer>
-    </div>
-    <button id="accessibility-toggle">Toggle High Contrast</button>
-    <script src="script.js"></script>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="submit_form.php" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Comprehensive Book Project. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
