@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -7,19 +8,26 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: #222;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
 }
 
+header .logo {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
 header h1 {
-    margin: 0;
+    margin: 10px 0;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -30,62 +38,75 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 main {
-    padding: 1rem;
+    padding: 20px;
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
 }
 
 footer {
-    background-color: #333;
+    background: #222;
     color: #fff;
-    padding: 1rem 0;
     text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-footer #social-media a {
+footer a {
     color: #fff;
-    margin: 0 10px;
     text-decoration: none;
-}
-
-footer #countdown {
-    margin-top: 1rem;
-}
-
-#timeline-container, #faq-container, #updates-container, #multimedia-container, #map-container, #resources-container {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    margin: 0 10px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
 }
 
 form label {
-    margin-top: 0.5rem;
+    text-align: right;
+    padding-right: 10px;
 }
 
 form input, form textarea {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 form button {
-    padding: 0.7rem;
-    margin-top: 1rem;
-    background-color: #333;
+    grid-column: span 2;
+    padding: 10px;
+    background: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timeline-item {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
