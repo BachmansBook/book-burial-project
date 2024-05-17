@@ -1,88 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A comprehensive website replication and enhancement project">
-    <meta name="keywords" content="website replication, HTML, CSS, JavaScript, design, functionality, SEO, accessibility">
-    <meta name="author" content="Your Name">
     <title>CI Book Project</title>
+    <meta name="description" content="A book with influential people writing messages to future generations about what the world will look like in 100 years.">
+    <meta name="keywords" content="future, messages, influential people, Central Park, 100 years, science, business, politics">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
-
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="CI Book Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="countdown">
+            <p>Countdown to October 2025:</p>
+            <div id="countdown-timer"></div>
+        </div>
+        <h1 class="logo">CI</h1>
     </header>
 
     <main>
-        <section id="home">
-            <div class="hero">
-                <h1>Welcome to CI Book Project</h1>
-                <p>Explore the journey and join us in making history.</p>
-                <a href="#about" class="cta-button">Learn More</a>
+        <section class="intro">
+            <h2>Welcome to the CI Book Project</h2>
+            <p>This project gathers messages from influential people around the world, predicting what the world will look like in 100 years.</p>
+            <video src="path/to/video.mp4" autoplay controls></video>
+        </section>
+
+        <section class="co-authors">
+            <h2>Meet the Co-Authors</h2>
+            <div class="author-list">
+                <!-- Example of a co-author profile -->
+                <div class="author">
+                    <img src="path/to/author1.jpg" alt="Author Name">
+                    <h3>Author Name</h3>
+                    <p>Short bio of the author. Their achievements and contributions.</p>
+                    <div class="social-media">
+                        <a href="https://twitter.com/author" target="_blank">Twitter</a>
+                        <a href="https://instagram.com/author" target="_blank">Instagram</a>
+                        <a href="https://youtube.com/author" target="_blank">YouTube</a>
+                    </div>
+                </div>
+                <!-- Repeat for each co-author -->
             </div>
         </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are committed to preserving history through our unique book burial project...</p>
-            <!-- Include the full descriptive content -->
-        </section>
-
-        <section id="features">
-            <h2>Features</h2>
-            <div class="features-list">
-                <div class="feature-item">
-                    <h3>Interactive Timeline</h3>
-                    <p>Track key milestones in our journey...</p>
+        <section class="timeline">
+            <h2>Project Timeline</h2>
+            <div class="timeline-container">
+                <!-- Timeline events -->
+                <div class="event">
+                    <h3>October 2025</h3>
+                    <p>Event description or milestone.</p>
                 </div>
-                <div class="feature-item">
-                    <h3>Live Updates</h3>
-                    <p>Get real-time insights and behind-the-scenes content...</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Multimedia Content</h3>
-                    <p>Experience our project through videos, photos, and audio clips...</p>
-                </div>
-                <!-- Add more features as necessary -->
+                <!-- Add more events as needed -->
             </div>
         </section>
 
-        <section id="contact">
+        <section class="contact">
             <h2>Contact Us</h2>
             <form action="submit_form.php" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
+                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send</button>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 CI Book Project. All rights reserved.</p>
-        <ul class="social-links">
-            <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
-            <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
-            <li><a href="#"><img src="images/instagram.png" alt="Instagram"></a></li>
-        </ul>
+        <div class="legal-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
     </footer>
-</body>
 
+    <script src="script.js"></script>
+</body>
 </html>
