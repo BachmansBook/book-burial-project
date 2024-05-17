@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (distance < 0) {
             clearInterval(interval);
-            countdownElement.innerHTML = "The event has started!";
+            countdownElement.innerHTML =
+
+ "The event has started!";
         }
     };
 
