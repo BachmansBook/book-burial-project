@@ -1,68 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive Book Project - A thorough and enhanced version of the original cibook.org website.">
-    <meta name="keywords" content="book, project, comprehensive, enhanced, cibook">
+    <meta name="description" content="A comprehensive website replication and enhancement project">
+    <meta name="keywords" content="website replication, HTML, CSS, JavaScript, design, functionality, SEO, accessibility">
     <meta name="author" content="Your Name">
-    <title>Comprehensive Book Project</title>
+    <title>CI Book Project</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
+
 <body>
     <header>
-        <div class="container">
-            <img src="logo.png" alt="Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="CI Book Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <section id="home" class="home">
-            <div class="container">
-                <h1>Welcome to the Comprehensive Book Project</h1>
-                <p>Your source for the most thorough and enhanced book project experience.</p>
+        <section id="home">
+            <div class="hero">
+                <h1>Welcome to CI Book Project</h1>
+                <p>Explore the journey and join us in making history.</p>
+                <a href="#about" class="cta-button">Learn More</a>
             </div>
         </section>
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>Learn more about our mission, vision, and the team behind the project.</p>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are committed to preserving history through our unique book burial project...</p>
+            <!-- Include the full descriptive content -->
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <h3>Interactive Timeline</h3>
+                    <p>Track key milestones in our journey...</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Live Updates</h3>
+                    <p>Get real-time insights and behind-the-scenes content...</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Multimedia Content</h3>
+                    <p>Experience our project through videos, photos, and audio clips...</p>
+                </div>
+                <!-- Add more features as necessary -->
             </div>
         </section>
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>Our Projects</h2>
-                <p>Explore the various projects we have undertaken and their impact.</p>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <form action="submit_form.php" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
         </section>
     </main>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Comprehensive Book Project. All rights reserved.</p>
-            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
-        </div>
+        <p>&copy; 2024 CI Book Project. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+            <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+            <li><a href="#"><img src="images/instagram.png" alt="Instagram"></a></li>
+        </ul>
     </footer>
-    <script src="scripts.js"></script>
 </body>
+
 </html>
