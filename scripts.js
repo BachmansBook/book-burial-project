@@ -1,42 +1,49 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Example JavaScript functionality
-    // Add any necessary event listeners and interactive functionalities here
+// script.js
 
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll("nav a");
+// Countdown Timer
+document.addEventListener('DOMContentLoaded', (event) => {
+    const countdownElement = document.getElementById('countdown-timer');
+    const targetDate = new Date('October 1, 2025 00:00:00').getTime();
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
 
-            window.scrollTo({
-                top: targetSection.offsetTop - 50,
-                behavior: "smooth"
-            });
-        });
-    });
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Contact form submission
-    const contactForm = document.querySelector("form");
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-    contactForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(this);
-        const name = formData.get("name");
-        const email = formData.get("email");
-        const message = formData.get("message");
-
-        // Simple form validation
-        if (name && email && message) {
-            alert("Thank you for your message, " + name + "!");
-            this.reset();
-        } else {
-            alert("Please fill in all fields.");
+        if (distance < 0) {
+            clearInterval(interval);
+            countdownElement.innerHTML = "The event has started!";
         }
-    });
+    };
 
-    // Placeholder for any other JavaScript functionality
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
 });
+
+// Form Submission
+const contactForm = document.querySelector('form');
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    
+    // Extract form data
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+
+    // Perform form submission (you can replace this with actual form submission logic)
+    alert(`Thank you, ${name}. Your message has been sent!`);
+
+    // Optionally, reset the form
+    contactForm.reset();
+});
+
+// Interactive Timeline (if needed)
+// You can add any interactive timeline functionality here if you decide to implement it.
