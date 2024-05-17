@@ -27,80 +27,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 // Form Submission
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('form');
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        
-        // Extract form data
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
+const contactForm = document.querySelector('form');
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-        // Perform form submission (you can replace this with actual form submission logic)
-        // For example, you could send the data to a server via AJAX:
-        // fetch('submit_form.php', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log(data);
-        //     alert(`Thank you, ${name}. Your message has been sent!`);
-        // })
-        // .catch(error => {
-        //     console.error('Error:', error);
-        //     alert('There was a problem submitting your message. Please try again later.');
-        // });
+    // Extract form data
+    const formData = new FormData(contactForm);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const subject = formData.get('subject');
+    const message = formData.get('message');
 
-        // Placeholder: Alert to indicate form submission
-        alert(`Thank you, ${name}. Your message has been sent!`);
+    // Perform form submission (you can replace this with actual form submission logic)
+    alert(`Thank you, ${name}. Your message has been sent!`);
 
-        // Optionally, reset the form
-        contactForm.reset();
-    });
+    // Optionally, reset the form
+    contactForm.reset();
 });
 
-// Interactive Timeline (Example functionality)
-// You can add any interactive timeline functionality here if needed.
-// For example, you might want to allow users to click on events to see more details:
+// Interactive Timeline (if needed)
+// You can add any interactive timeline functionality here if you decide to implement it.
 
-document.addEventListener('DOMContentLoaded', () => {
-    const events = document.querySelectorAll('.timeline-container .event');
-    events.forEach(event => {
-        event.addEventListener('click', () => {
-            // Expand or show more details about the event
-            alert(`Details about the event: ${event.querySelector('h3').textContent}`);
-        });
-    });
-});
-
-// Video Auto-Play Handling
-document.addEventListener('DOMContentLoaded', () => {
+// Script to handle video autoplay on page load
+document.addEventListener('DOMContentLoaded', (event) => {
     const videoElement = document.querySelector('video');
     if (videoElement) {
-        videoElement.setAttribute('autoplay', true);
-        videoElement.setAttribute('controls', true);
-    }
-});
-
-// Additional UI Enhancements
-document.addEventListener('DOMContentLoaded', () => {
-    // Example: Add a smooth scroll effect for internal links
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
+        videoElement.play().catch(error => {
+            console.log("Video autoplay was prevented:", error);
         });
-    });
+    }
 });
