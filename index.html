@@ -2,55 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CI Book Project</title>
     <meta name="description" content="A book with influential people writing messages to future generations about what the world will look like in 100 years.">
     <meta name="keywords" content="future, messages, influential people, Central Park, 100 years, science, business, politics">
+    <meta name="author" content="CI Book Project Team">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="countdown">
+        <div class="countdown" aria-live="polite">
             <p>Countdown to October 2025:</p>
-            <div id="countdown-timer"></div>
+            <div id="countdown-timer" role="timer" aria-live="assertive"></div>
         </div>
-        <h1 class="logo">CI</h1>
+        <h1 class="logo" role="banner">CI</h1>
     </header>
 
     <main>
         <section class="intro">
             <h2>Welcome to the CI Book Project</h2>
-            <p>This project gathers messages from influential people around the world, predicting what the world will look like in 100 years.</p>
-            <video src="https://www.dropbox.com/s/9ihg2cxdjcyrpznb4rd14/Video-May-16-2024-19-50-58.mp4?raw=1" autoplay controls></video>
+            <p>This project gathers messages from influential people around the world, predicting what the world will look like in 100 years. The CI Book Project is a unique initiative that brings together visionary thoughts from various fields, including science, business, politics, and more. Each contributor provides insights and predictions about their area of expertise, offering a glimpse into the future.</p>
+            <video src="https://www.dropbox.com/s/9ihg2cxdjcyrpznb4rd14/Video-May-16-2024-19-50-58.mp4?raw=1" autoplay controls aria-label="CI Book Project Introductory Video"></video>
+            <p>Our goal is to create a time capsule that will be buried in Central Park, New York City, and revealed in 100 years. This book will serve as a historical document, capturing the hopes, fears, and dreams of today's leaders and thinkers. It is an ambitious project that requires the collaboration of many influential people from around the globe.</p>
         </section>
 
         <section class="co-authors">
             <h2>Meet the Co-Authors</h2>
             <div class="author-list">
-                <!-- Example of a co-author profile -->
                 <div class="author">
-                    <img src="path/to/author1.jpg" alt="Author Name">
+                    <img src="path/to/author1.jpg" alt="Photo of Author Name">
                     <h3>Author Name</h3>
-                    <p>Short bio of the author. Their achievements and contributions.</p>
+                    <p>Short bio of the author. Their achievements and contributions. Author Name is a renowned expert in their field, having made significant contributions to their area of expertise. They have received numerous awards and recognitions for their work, and their insights are highly valued.</p>
                     <div class="social-media">
-                        <a href="https://twitter.com/author" target="_blank">Twitter</a>
-                        <a href="https://instagram.com/author" target="_blank">Instagram</a>
-                        <a href="https://youtube.com/author" target="_blank">YouTube</a>
+                        <a href="https://twitter.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author Twitter Profile">Twitter</a>
+                        <a href="https://instagram.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author Instagram Profile">Instagram</a>
+                        <a href="https://youtube.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author YouTube Channel">YouTube</a>
                     </div>
                 </div>
                 <!-- Repeat for each co-author -->
+                <div class="author">
+                    <img src="path/to/author2.jpg" alt="Photo of Author Name">
+                    <h3>Author Name</h3>
+                    <p>Short bio of the author. Their achievements and contributions. Author Name is a visionary leader in the field of business, known for their innovative approaches and successful ventures. They have been instrumental in shaping the future of their industry and continue to inspire others with their forward-thinking ideas.</p>
+                    <div class="social-media">
+                        <a href="https://twitter.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author Twitter Profile">Twitter</a>
+                        <a href="https://instagram.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author Instagram Profile">Instagram</a>
+                        <a href="https://youtube.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author YouTube Channel">YouTube</a>
+                    </div>
+                </div>
+                <div class="author">
+                    <img src="path/to/author3.jpg" alt="Photo of Author Name">
+                    <h3>Author Name</h3>
+                    <p>Short bio of the author. Their achievements and contributions. Author Name is a respected political figure who has dedicated their career to public service. Their work has had a profound impact on policy and governance, and their contributions continue to shape the political landscape.</p>
+                    <div class="social-media">
+                        <a href="https://twitter.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author Twitter Profile">Twitter</a>
+                        <a href="https://instagram.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author Instagram Profile">Instagram</a>
+                        <a href="https://youtube.com/author" target="_blank" rel="noopener noreferrer" aria-label="Author YouTube Channel">YouTube</a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="timeline">
             <h2>Project Timeline</h2>
             <div class="timeline-container">
-                <!-- Timeline events -->
                 <div class="event">
                     <h3>October 2025</h3>
-                    <p>Event description or milestone.</p>
+                    <p>Event description or milestone. This is the expected date for the burial of the CI Book in Central Park. The event will be attended by many of the co-authors, dignitaries, and the public. It will be a historic moment as we commit the book to the earth, to be preserved and revealed in 100 years.</p>
                 </div>
-                <!-- Add more events as needed -->
+                <div class="event">
+                    <h3>November 2023</h3>
+                    <p>Event description or milestone. The project officially launches, and invitations are sent to influential figures around the world to contribute their messages and predictions for the future. This marks the beginning of the CI Book Project's journey.</p>
+                </div>
+                <div class="event">
+                    <h3>January 2024</h3>
+                    <p>Event description or milestone. The first drafts of contributions are received and reviewed by the editorial team. This phase involves selecting the most impactful and insightful messages to be included in the book.</p>
+                </div>
+                <div class="event">
+                    <h3>June 2024</h3>
+                    <p>Event description or milestone. The book enters the final stages of compilation. Editing, formatting, and design work are completed to ensure the book is a high-quality artifact worthy of its historic purpose.</p>
+                </div>
+                <div class="event">
+                    <h3>September 2024</h3>
+                    <p>Event description or milestone. The completed book is presented to the public for the first time in a special unveiling event. This allows the contributors and the public to see the finished product before it is sealed for burial.</p>
+                </div>
             </div>
         </section>
 
@@ -71,17 +107,18 @@
                 
                 <button type="submit">Send Message</button>
             </form>
+            <p>If you have any questions about the CI Book Project or would like to get involved, please do not hesitate to contact us. We are always looking for passionate individuals who share our vision for the future.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 CI Book Project. All rights reserved.</p>
+        <p>&copy; 2024 CI Book Project. All rights reserved. This project is a collaborative effort aimed at preserving the voices of today's influential figures for future generations. Our mission is to create a legacy that will inspire and inform those who come after us.</p>
         <div class="legal-links">
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms-of-service.html">Terms of Service</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
